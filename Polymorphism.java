@@ -61,19 +61,20 @@ class Magazine extends Book {
     }
 
     void currentissue() {
-        System.out.println("Magazine CUrrent Issue: " + super.title);
+        System.out.println("Magazine Current Issue: " + super.title);
+        
     }
 
     void recieveissue() {
-        System.out.println("Received issued Magazine: " + super.title);
-        System.out.println("Magazine issue recieved" + this.quantity);
+        System.out.println("Magazine: " + super.title);
+        System.out.println("Magazine issue recieved " + this.quantity);
         
     }
 }
 
 public class Polymorphism {
     public static void main(String[] args) {
-        Publication p = new Publication();
+        /*Publication p = new Publication();
         System.out.println("----Entering details for a Publication----");
         p.accept();
         System.out.println("----Displaying Publication details----");
@@ -90,19 +91,59 @@ public class Polymorphism {
         System.out.println("----Entering details for a Magazine----");
         m.accept(); // Inherits from Publication
         m.ordercopies(); // Inherits from Book
-      
         m.currentissue();
         m.orderquantity();
-      
         System.out.println("\n");
         m.recieveissue();
         System.out.println("\n");
         p.salecopy();
         System.out.println("\n");
-        b.salecopy();
-     /*   System.out.println("\n");
+        b.salecopy();*/
+     /* System.out.println("\n");
         m.salecopy();*/
         
+        
+          System.out.println("Select from the following options:");
+         System.out.println("1.Publication\n2.Book\n3.Magazine");
+         Scanner sr = new Scanner(System.in);
+        System.out.println("Enter the option:");
+        int option = sr.nextInt();
+        switch(option){
+                case 1:
+                Publication p = new Publication();
+        System.out.println("----Entering details for a Publication----");
+        p.accept();
+        System.out.println("----Displaying Publication details----");
+        p.display();
+     
+        System.out.println("\n");
+        p.salecopy();
+        break;
+               case 2:
+               Book b = new Book();
+        System.out.println("----Entering details for a Book----");
+        b.accept(); // Inherits from Publication
+        b.ordercopies();
+        System.out.println("----Displaying Book details----");
+        b.display(); // Inherits from Publication
+       
+        System.out.println("\n");
+        b.salecopy();
+        break;
+        
+        case 3:
+        	Magazine m = new Magazine();
+        System.out.println("----Entering details for a Magazine----");
+        m.accept(); // Inherits from Publication
+        m.ordercopies(); // Inherits from Book
+        m.currentissue();
+        m.orderquantity();
+        System.out.println("\n");
+        m.recieveissue();
+        System.out.println("\n");
+        break;  }     
+        }
+        
     }
-}
+
 
